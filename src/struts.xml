@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<!-- <constant name="struts.enable.DynamicMethodInvocation" value="true" /> -->
+
+	<package name="struts2" extends="struts-default" namespace="/bank">
+		<action name="saveMoney" class="BankAction" method="saveMoney">
+			<result name="saveResult">/bank/saveMoney.jsp</result>
+		</action>
+
+		<action name="getMoney" class="BankAction" method="getMoney">
+			<result name="getResult">/bank/getMoney.jsp</result>
+		</action>
+		<action name="findMoney" class="BankAction" method="findMoney">
+			<result name="findResult">/bank/findMoney.jsp</result>
+		</action>
+
+	</package>
+	<package name="struts2_1" extends="struts-default" namespace="/bank1">
+		<action name="*Money" class="BankAction" method="{1}Money">
+			<result name="saveResult">/bank/saveMoney1.jsp</result>
+			<result name="getResult">/bank/getMoney1.jsp</result>
+			<result name="findResult">/bank/findMoney1.jsp</result>
+		</action>
+
+	</package>
+	<package name="struts2_2" extends="struts-default" namespace="/bank2">
+		<action name="bankAction" class="BankAction">
+			<result name="saveResult">/bank/saveMoney.jsp</result>
+			<result name="getResult">/bank/getMoney.jsp</result>
+			<result name="findResult">/bank/findMoney.jsp</result>
+		</action>
+	</package>
+</struts>
